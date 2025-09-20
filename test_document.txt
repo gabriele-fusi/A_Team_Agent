@@ -1,0 +1,21 @@
+A-Team Agent Information
+========================
+
+The A-Team Agent is a framework-assisted RAG (Retrieval-Augmented Generation) application. 
+
+Key Features:
+- Streamlit UI for easy interaction
+- Local FAISS vector storage for fast retrieval
+- OpenAI API integration for embeddings and chat
+- Support for multiple document formats (PDF, TXT, MD, DOCX)
+- Intelligent chunking with overlap for better context
+- Source attribution in responses
+
+Technical Stack:
+- Frontend: Streamlit
+- Vector Database: FAISS (local)
+- Framework: LangChain
+- AI Provider: OpenAI
+- Document Processing: Multiple loaders for different formats
+
+This system allows users to upload documents and ask questions about them, receiving intelligent answers with source citations.
