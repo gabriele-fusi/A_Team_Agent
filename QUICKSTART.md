@@ -9,11 +9,11 @@
 
 1. **Run the setup script:**
    - Double-click `setup.bat` 
-   - This will create the virtual environment and install all dependencies
+   - This will create the virtual environment, copy `.env.example` to `.env`, and install all dependencies
 
 2. **Edit `.env` file and add your OpenAI API key:**
    - Open `.env` file in any text editor
-   - Replace `your_actual_api_key_here` with your actual OpenAI API key
+   - Replace `your_openai_api_key_here` with your actual OpenAI API key
 
 3. **Run the application:**
    - Double-click `run.bat`
@@ -21,12 +21,18 @@
 
 ### Option 2: Manual Setup (All Platforms)
 
-1. **Create a virtual environment:**
+1. **Create environment file:**
+```bash
+# Copy the example file
+cp .env.example .env
+```
+
+2. **Create a virtual environment:**
 ```bash
 python -m venv .venv
 ```
 
-2. **Activate the virtual environment:**
+3. **Activate the virtual environment:**
 
 **Windows:**
 ```bash
@@ -38,19 +44,19 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-3. **Edit `.env` file and add your OpenAI API key:**
+4. **Edit `.env` file and add your OpenAI API key:**
 
 Replace the placeholder in the `.env` file:
 ```
 OPENAI_API_KEY=your_actual_api_key_here
 ```
 
-4. **Install dependencies:**
+5. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-5. **Run the application:**
+6. **Run the application:**
 ```bash
 streamlit run app.py
 ```
@@ -60,13 +66,14 @@ streamlit run app.py
 
 ## File Structure
 
-- `setup.bat` - Windows setup script (creates .venv and installs dependencies)
+- `setup.bat` - Windows setup script (creates .venv, copies .env, installs dependencies)
 - `run.bat` - Windows run script (starts the app)
 - `app.py` - Main Streamlit application
 - `src/` - Core application modules
 - `data/` - Document storage and vector indices
 - `tests/` - Unit tests
-- `.env` - Environment variables (edit with your API key)
+- `.env.example` - Environment variables template (gets pushed to repo)
+- `.env` - Your local environment variables (edit with your API key)
 - `.venv/` - Virtual environment (created by setup.bat or manually)
 
 ## Troubleshooting

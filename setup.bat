@@ -27,6 +27,14 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
+echo Creating .env file from template...
+if not exist ".env" (
+    copy .env.example .env
+    echo .env file created from template
+) else (
+    echo .env file already exists
+)
+
 echo Installing dependencies...
 pip install --upgrade pip
 pip install -r requirements.txt
